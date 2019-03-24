@@ -1,5 +1,7 @@
 package com.minhe.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.minhe.entity.Goods;
 import com.minhe.entity.PageBean;
 import com.minhe.mapper.GoodsMapper;
@@ -42,6 +44,10 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public PageBean findByPage(Goods goods, int pageCode, int pageSIze) {
-        return null;
+        // 使用 MyBatis 分页插件
+        PageHelper.startPage(pageCode, pageSIze);
+        Page<Goods> page = goodsMapper.findByPage(goods);
+
+        return new PageBean(page.getTotal(), page.getResult());
     }
 }
