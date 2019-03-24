@@ -10,7 +10,7 @@ public interface BaseService<T> {
     // 添加
     void create(T t);
     // 批量删除
-    void delete(Long id);
+    void delete(Long... id);
     // 修改
     void update(T t);
 }

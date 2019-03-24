@@ -18,4 +18,6 @@ public interface GoodsMapper {
     void delete(Long id);
 
     Page<Goods> findByPage(Goods goods);
+
+    void update(Goods goods);
 }

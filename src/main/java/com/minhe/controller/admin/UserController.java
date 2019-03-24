@@ -29,10 +29,4 @@ public class UserController {
     public void create(User user) {
         userService.create(user);
     }
-
-    @RequestMapping("/delete")
-    public void delete(@RequestParam("id") Long id) {
-        userService.delete(id);
-    }
-
 }

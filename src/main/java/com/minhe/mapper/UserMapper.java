@@ -15,4 +15,6 @@ public interface UserMapper {
     void create(User user);
 
     void delete(Long id);
+
+    User findByName(String name);
 }

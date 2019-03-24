@@ -28,12 +28,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(Long id) {
-        userMapper.delete(id);
+    public void delete(Long... ids) {
+        for (Long id : ids)
+            userMapper.delete(id);
     }
 
     @Override
     public void update(User user) {
 
+    }
+
+    @Override
+    public User findByName(String name) {
+        return userMapper.findByName(name);
     }
 }

@@ -3,7 +3,7 @@
 <mapper namespace="com.minhe.mapper.GoodsMapper">
 
     <resultMap id="goodsResultMap" type="com.minhe.entity.Goods">
-    <id column="id" property="id" jdbcType="INTEGER"/>
+        <id column="id" property="id" jdbcType="INTEGER"/>
         <result property="title" column="title" jdbcType="VARCHAR"/>
         <result property="price" column="price" jdbcType="VARCHAR"/>
         <result property="image" column="image" jdbcType="VARCHAR"/>
@@ -39,5 +39,24 @@
     <delete id="delete" parameterType="Long">
         DELETE FROM tb_goods WHERE id = #{id}
     </delete>
+
+    <update id="update" parameterType="com.minhe.entity.Goods">
+        UPDATE tb_goods
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="image != null">
+                image = #{image},
+            </if>
+            <if test="brand != null">
+                brand = #{brand},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
 
 </mapper>

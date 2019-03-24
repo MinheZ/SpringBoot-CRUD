@@ -33,13 +33,14 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public void delete(Long id) {
-
+    public void delete(Long... ids) {
+        for (Long id : ids)
+            goodsMapper.delete(id);
     }
 
     @Override
     public void update(Goods goods) {
-
+        goodsMapper.update(goods);
     }
 
     @Override

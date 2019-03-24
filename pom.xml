@@ -101,6 +101,12 @@
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-parameter-names</artifactId>
         </dependency>
+        <!--添加fastDFS的引用-->
+        <dependency>
+            <groupId>fastdfs_client</groupId>
+            <artifactId>fastdfs_client</artifactId>
+            <version>1.25</version>
+        </dependency>
     </dependencies>
 
     <build>
